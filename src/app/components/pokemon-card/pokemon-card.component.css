@@ -1,0 +1,11 @@
+.card-list {
+    border: 1px solid rgb(67, 80, 106);
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 24px;
+}
+
+.card-image {
+    display: block;
+    margin: 0 auto;
+}

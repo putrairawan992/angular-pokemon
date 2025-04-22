@@ -1,0 +1,19 @@
+<!-- pokemon-modal.component.html -->
+<div *ngIf="visible$ | async">
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <ng-container *ngIf="pokemon$ | async as pokemon">
+          <h2>{{ pokemon.name | titlecase }}</h2>
+          <p>ID: #{{ pokemon.id | number:'3.0' }}</p>
+          <p>Height: {{ pokemon.height }}</p>
+          <p>Weight: {{ pokemon.weight }}</p>
+          <p>Types: {{ getTypes(pokemon) }}</p>
+          <p>Abilities: {{ getAbilities(pokemon) }}</p>
+          <p>Moves: {{ getMoves(pokemon) }}</p>
+        </ng-container>
+        <button class="button-close-modal"  (click)="closeModal()">Close</button>
+  
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,8 @@
+<!-- pokemon-card.component.html -->
+<div class="card-list" (click)="openModal()">
+  <img class="card-image" [src]="pokemon.sprites.front_default" alt="Pokemon image">
+  <h3>#{{ pokemon.id | number:'3.0' }} - {{ pokemon.name | titlecase }}</h3>
+  <p>Height: {{ pokemon.height }}</p>
+  <p>Weight: {{ pokemon.weight }}</p>
+  <p>Type: {{ pokemonTypes }}</p>
+</div>

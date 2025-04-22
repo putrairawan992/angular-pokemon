@@ -1,0 +1,40 @@
+/* pokemon-list.component.css */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 0;
+    flex-wrap: wrap;
+  }
+  
+  .pagination button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .pagination button:hover:not([disabled]) {
+    background-color: #ccc;
+  }
+  
+  .pagination button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .pagination button.active {
+    background-color: #673ab7;
+    color: white;
+    font-weight: bold;
+  }
+  
