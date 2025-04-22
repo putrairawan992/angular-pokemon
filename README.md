@@ -20,4 +20,4 @@ ng serve
 
 ## Online Live
 
-[Pokemon Test](https://github.com/angular/angular-cli](https://angular-pokemon-nu.vercel.app/)
+[Pokemon Test](https://angular-pokemon-nu.vercel.app/)
