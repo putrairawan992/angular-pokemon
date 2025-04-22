@@ -19,21 +19,26 @@ export class PokemonListComponent {
   currentPage = 1;
   perPage = 10;
   max = 151;
+  loading = false;
 
   constructor(private pokemonService: PokemonService) {
     this.loadPokemons();
   }
 
   loadPokemons() {
+    this.loading = true;
     this.pokemonService.getPokemonList(0, 20).subscribe((data: any[]) => {
       this.pokemons = data;
+      this.loading = false;
     });
   }
 
   loadPage(page: number) {
     const offset = (page - 1) * this.perPage;
+    this.loading = true;
     this.pokemonService.getPokemonList(offset, this.perPage).subscribe((data: any[]) => {
       this.pokemons = data;
+      this.loading = false;
       this.currentPage = page;
     });
   }

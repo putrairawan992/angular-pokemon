@@ -1,21 +1,33 @@
 <!-- pokemon-list.component.html -->
-<div class="grid-container">
-    <app-pokemon-card
-      *ngFor="let pokemon of pokemons"
-      [pokemon]="pokemon"
-      (selected)="selectPokemon($event)">
-    </app-pokemon-card>
-  </div>
-  
-  <div class="pagination">
-    <button (click)="loadPage(currentPage - 1)" [disabled]="currentPage === 1">Sebelumnya</button>
-  
-    <button *ngFor="let page of pages"
-            (click)="loadPage(page)"
-            [class.active]="page === currentPage">
-      {{ page }}
-    </button>
-  
-    <button (click)="loadPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
-  </div>
-  
+<div *ngIf="loading" class="spinner-container">
+  <div class="spinner"></div>
+</div>
+<div *ngIf="!loading" class="grid-container">
+  <app-pokemon-card
+    *ngFor="let pokemon of pokemons"
+    [pokemon]="pokemon"
+    (selected)="selectPokemon($event)"
+  >
+  </app-pokemon-card>
+</div>
+
+<div *ngIf="!loading" class="pagination">
+  <button (click)="loadPage(currentPage - 1)" [disabled]="currentPage === 1">
+    Sebelumnya
+  </button>
+
+  <button
+    *ngFor="let page of pages"
+    (click)="loadPage(page)"
+    [class.active]="page === currentPage"
+  >
+    {{ page }}
+  </button>
+
+  <button
+    (click)="loadPage(currentPage + 1)"
+    [disabled]="currentPage === totalPages"
+  >
+    Next
+  </button>
+</div>
