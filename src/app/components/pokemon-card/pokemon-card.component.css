@@ -1,8 +1,21 @@
 .card-list {
-    border: 1px solid rgb(67, 80, 106);
-    cursor: pointer;
-    padding: 12px;
-    border-radius: 24px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 10px;
+    text-align: center;
+    color: rgb(241, 241, 241);
+    position: relative;
+    background: linear-gradient(rgb(43, 42, 42), rgb(27, 27, 27));
+    border-radius: 10px;
+    margin: 0.8rem;
+    padding: 1.4rem;
+}
+
+.img-container {
+    box-shadow: rgba(202, 201, 201, 0.05) 0px 0px 10px 10px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    background: linear-gradient(rgba(214, 214, 214, 0.325), rgba(77, 77, 77, 0.1));
+    border-radius: 50%;
 }
 
 .card-image {
